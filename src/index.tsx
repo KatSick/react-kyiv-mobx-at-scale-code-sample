@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import DevTools from 'mobx-devtools';
@@ -15,11 +15,14 @@ ReactDOM.render(
       <header className="devtools">
         <DevTools />
       </header>
-      {/*<ul>*/}
-        {/*<li><Link to="/demo1">Demo 1</Link></li>*/}
-        {/*<li><Link to="/demo2">Demo 2</Link></li>*/}
-        {/*<li><Link to="/demo3">Demo 3</Link></li>*/}
-      {/*</ul>*/}
+
+      <Route path="/" exact render={() => (
+        <ul>
+          <li><Link to="/demo1">Demo 1</Link></li>
+          <li><Link to="/demo2">Demo 2</Link></li>
+          <li><Link to="/demo3">Demo 3</Link></li>
+        </ul>
+      )} />
 
       {/*<hr/>*/}
 
